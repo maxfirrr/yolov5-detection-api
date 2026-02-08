@@ -1,0 +1,24 @@
+version: '3.8'
+
+services:
+  object-detection:
+    build: .
+    container_name: yolov5-detection-api
+    ports:
+      - "8000:8000"
+    environment:
+      - PYTHONUNBUFFERED=1
+      - CUDA_VISIBLE_DEVICES=
+    volumes:
+      - ./models:/app/models
+    restart: unless-stopped
+    deploy:
+      resources:
+        limits:
+          memory: 4G
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 60s
