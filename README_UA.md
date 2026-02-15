@@ -184,8 +184,7 @@ object_detection_service/
 │   ├── yolov5s.pt       # Модель YOLOv5
 │   └── active_model.pt  # Копія активної моделі
 ├── README.md            # Документація (English)
-├── README_UA.md         # Документація (Українська)
-└── README_RU.md         # Документація (Русский)
+└── README_UA.md         # Документація (Українська)
 ```
 
 ## Власні моделі
